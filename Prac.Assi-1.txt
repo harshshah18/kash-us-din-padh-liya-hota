@@ -1,0 +1,279 @@
+VIDHYADEEP UNIVERSITY INSTITUTE OF B.Sc. IT & BCA
+NAME :SUBJECT :-
+
+ENROLLMENT :-
+
+SUBMIT DATE :-
+
+DEPARTMENT :-
+
+SR
+NO
+
+PROBLEMS
+
+1
+
+DISPLAY INTEGER ENTER BY USER USING AN ARRAY.
+
+2
+
+DISPLAY CHARACTER ENTER BY USER USING ARRAY.
+
+3
+
+INITIALISATION OF AN ARRAY.
+
+4
+
+CREATE A a[i] = i[a]
+
+5
+
+SUM OF VALUES IN ARRAY .
+
+6
+
+SUM OF ENTERED INTEGER VALUS.
+
+7
+
+DISPLAY CHARACTER TYPE ARRAY.
+
+8
+
+DISPLAY MATRIX ADDITION.
+
+9
+
+DISPLAY MULTIPLICATION OF ARRAY ELEMENTS.
+
+DATE
+
+SIGN
+
+1 - DISPLAY INTEGER ENTER BY USER USING AN ARRAY.
+ANS =>
+#include <stdio.h>
+int main() {
+int n;
+printf("Enter the number of integers you want to enter: ");
+scanf("%d", &n);
+int arr[n];
+printf("Enter %d integers:\n", n);
+for (int i = 0; i < n; i++) {
+printf("Integer %d: ", i + 1);
+scanf("%d", &arr[i]);
+}
+printf("You entered:\n");
+for (int i = 0; i < n; i++) {
+printf("Integer %d: %d\n", i + 1, arr[i]);
+}
+return 0;
+}
+
+2 - DISPLAY CHARACTER ENTER BY USER USING ARRAY.
+ANS =>
+#include <stdio.h>
+int main() {
+int n;
+printf("Enter the number of characters you want to enter: ");
+scanf("%d", &n);
+char arr[n + 1];
+while (getchar() != '\n');
+printf("Enter %d characters:\n", n);
+for (int i = 0; i < n; i++) {
+printf("Character %d: ", i + 1);
+arr[i] = getchar();
+while (getchar() != '\n');
+arr[n] = '\0';
+printf("You entered:\n");
+for (int i = 0; i < n; i++) {
+printf("Character %d: %c\n", i + 1, arr[i]);
+}
+return 0;
+}
+
+3 - INITIALISATION OF AN ARRAY.
+ANS =>
+#include <stdio.h>
+int main()
+int arr1[5] = {1, 2, 3, 4, 5};
+char arr2[4] = {'a', 'b', 'c', '\0'};
+printf("Integer array elements:\n");
+for (int i = 0; i < 5; i++) {
+printf("%d ", arr1[i]);
+}
+printf("\n");
+printf("Character array elements:\n");
+for (int i = 0; i < 4; i++) {
+printf("%c ", arr2[i]);
+}
+printf("\n");
+return 0;
+}
+
+4 - CREATE A a[i] = i[a]
+ANS =>
+#include <stdio.h>
+int main() {
+int size = 5;
+int arr[size];
+for (int i = 0; i < size; i++) {
+arr[i] = i[arr];
+
+}
+
+printf("Array elements:\n");
+for (int i = 0; i < size; i++) {
+printf("arr[%d] = %d\n", i, arr[i]);
+}
+return 0;
+}
+
+5 - SUM OF VALUES IN ARRAY .
+ANS =>
+#include <stdio.h>
+int main() {
+int n;
+printf("Enter the number of elements: ");
+scanf("%d", &n);
+int arr[n];
+for(int i = 0; i < n; i++) {
+printf("Enter %d elements:\n", i+1);
+scanf("%d", &arr[i]);
+}
+int sum = 0;
+for(int i = 0; i < n; i++) {
+sum += arr[i];
+}
+printf("The sum of the elements is: %d\n", sum);
+return 0;
+}
+
+6 - SUM OF ENTERED INTEGER VALUS.
+ANS =>
+#include <stdio.h>
+int main() {
+int size;
+int sum = 0;
+printf("Enter the number of integers: ");
+scanf("%d", &size);
+if (size <= 0) {
+printf("The number of integers must be positive.\n");
+return 1;
+}
+int arr[size];
+printf("Enter %d integers:\n", size);
+for (int i = 0; i < size; i++) {
+printf("Integer %d: ", i + 1);
+scanf("%d", &arr[i]);
+}
+for (int i = 0; i < size; i++) {
+sum += arr[i];
+}
+printf("The sum of the entered integers is: %d\n", sum);
+return 0;
+}
+
+7 - DISPLAY CHARACTER TYPE ARRAY.
+ANS =>
+#include <stdio.h>
+int main() {
+char arr[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
+int size = sizeof(arr) / sizeof(arr[0]);
+printf("Character array elements:\n");
+for (int i = 0; i < size; i++) {
+printf("%c ", arr[i]);
+}
+printf("\n");
+return 0;
+}
+
+8 - DISPLAY MATRIX ADDITION.
+ANS =>
+#include <stdio.h>
+#define MAX 10
+int main() {
+int rows, cols;
+int matrix1[MAX][MAX], matrix2[MAX][MAX], result[MAX][MAX];
+printf("Enter the number of rows and columns for the matrices: ");
+scanf("%d %d", &rows, &cols);
+if (rows <= 0 || cols <= 0 || rows > MAX || cols > MAX) {
+printf("Invalid matrix dimensions. Rows and columns must be between 1
+and %d.\n", MAX);
+return 1;
+}
+printf("Enter elements for matrix A:\n");
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+printf("Element [%d][%d]: ", i, j);
+scanf("%d", &matrix1[i][j]);
+}
+}
+printf("Enter elements for matrix B:\n");
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+printf("Element [%d][%d]: ", i, j);
+
+scanf("%d", &matrix2[i][j]);
+}
+}
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+result[i][j] = matrix1[i][j] + matrix2[i][j];
+}
+}
+printf("Matrix A:\n");
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+printf("%d ", matrix1[i][j]);
+}
+printf("\n");
+}
+printf("Matrix B:\n");
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+printf("%d ", matrix2[i][j]);
+}
+printf("\n");
+}
+printf("Sum of Matrix A and Matrix B:\n");
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+
+printf("%d ", result[i][j]);
+}
+printf("\n");
+}
+
+return 0;
+}
+
+9 - DISPLAY MULTIPLICATION OF ARRAY ELEMENTS.
+ANS =>
+#include <stdio.h>
+
+int main() {
+int n;
+int arr[MAX] = 100;
+long long product = 1;
+printf("Enter the number of elements in the array (max %d): ", MAX);
+scanf("%d", &n);
+if (n <= 0 || n > MAX) {
+printf("Invalid number of elements %d\n", MAX);
+return 1;
+}
+printf("Enter %d elements:\n", n);
+for (int i = 0; i < n; i++) {
+printf("Element %d: ", i + 1);
+scanf("%d", &arr[i]);
+}
+for (int i = 0; i < n; i++) {
+product *= arr[i];
+}
+printf("The product of the array elements is: %lld\n", product);
+return 0;
+}
+
+
